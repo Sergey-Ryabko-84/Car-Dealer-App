@@ -1,0 +1,7 @@
+.list {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4;
+}
+
+.item {
+  @apply p-4 border border-gray-300 rounded-lg shadow hover:shadow-lg transition;
+}

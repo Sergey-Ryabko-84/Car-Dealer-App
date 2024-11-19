@@ -1,7 +1,7 @@
 import { Suspense, use } from "react";
 import { getAllMakes } from "@/api/vehiclesApi";
 import { ModelsList } from "@/components";
-import { LoadingMessage } from "@/common/massages";
+import { LoadingMessage, NavigateButton } from "@/common";
 
 type Props = {
   params: Promise<{ makeId: string; year: string }>;
@@ -13,9 +13,12 @@ export default function Result({ params }: Props) {
   return (
     <main className="flex flex-col items-center p-10">
       <h1 className="text-3xl font-semibold mb-4">Models:</h1>
+
       <Suspense fallback={<LoadingMessage />}>
         <ModelsList makeId={makeId} year={year} />
       </Suspense>
+
+      <NavigateButton href={"/"} label="Go to Home" />
     </main>
   );
 }
