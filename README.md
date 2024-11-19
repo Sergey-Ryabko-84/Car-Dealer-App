@@ -54,14 +54,17 @@ Follow these steps to get your development environment set up:
 
 5. To build the application for production:
 
-   ````bash
+   ```bash
    npm run build
+
+   ```
 
    After building, you can start the application in production mode:
 
    ```bash
    npm run start
-   ````
+
+   ```
 
 ## Usage
 
