@@ -48,9 +48,10 @@ Follow these steps to get your development environment set up:
 
    ```bash
    npm run dev
-   This will start the development server at http://localhost:3000.
 
    ```
+
+   This will start the development server at http://localhost:3000.
 
 5. To build the application for production:
 
