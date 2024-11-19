@@ -1,0 +1,11 @@
+.wrapper {
+  @apply flex flex-col gap-1;
+}
+
+.label {
+  @apply block text-sm font-medium text-gray-500;
+}
+
+.select {
+  @apply block w-full h-8 border-gray-300 rounded-md shadow-sm text-gray-500;
+}
