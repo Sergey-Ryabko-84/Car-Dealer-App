@@ -1,11 +1,10 @@
-// hooks/useMakes.ts
 import { useEffect, useState } from "react";
 import { getAllMakes } from "@/api/vehiclesApi";
 
-interface VehicleMake {
+type VehicleMake = {
   MakeId: number;
   MakeName: string;
-}
+};
 
 export const useMakes = () => {
   const [makes, setMakes] = useState<VehicleMake[]>([]);
