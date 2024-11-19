@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Car Dealer App
 
-## Getting Started
+This project is a web application that allows users to view car models based on the make and year. The application fetches data from a vehicle API and displays the list of models for a selected make and year. It uses Next.js, Tailwind CSS, and React for building a responsive and interactive UI.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Display models based on selected make and year.
+- Fetches data from an API using `fetch` and `generateStaticParams`.
+- Supports light and dark themes using Tailwind CSS.
+- Includes loading and error handling states.
+- Responsive design for various screen sizes.
+- Button for navigation back to the homepage.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Frontend:** React, Next.js, Tailwind CSS
+- **API:** Fetch data from a vehicle API
+- **Styling:** Tailwind CSS for responsive design
+- **State Management:** React hooks
+- **Routing:** Next.js dynamic routes
+- **Data Fetching:** Next.js `fetch`, `generateStaticParams`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Installation
 
-## Learn More
+Follow these steps to get your development environment set up:
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repository:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   git clone https://github.com/Sergey-Ryabko-84/car-dealer-app
+   cd car-dealer-app
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```
 
-## Deploy on Vercel
+2. Install the required dependencies:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   npm install
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```
+
+3. Set up your environment variables:
+
+   Create a .env.local file at the root of the project.
+   Add the following environment variable: API_URL=your_api_url_here
+
+4. Run the application in development mode:
+
+   ```bash
+   npm run dev
+   This will start the development server at http://localhost:3000.
+
+   ```
+
+5. To build the application for production:
+
+   ````bash
+   npm run build
+
+   After building, you can start the application in production mode:
+
+   ```bash
+   npm run start
+   ````
+
+## Usage
+
+### Dynamic Routes
+
+The application supports dynamic routes for displaying vehicle models based on the make and year. The route pattern is:
+
+/result/[makeId]/[year]
+[makeId]: The unique identifier for the vehicle make.
+[year]: The year of the vehicle model.
+The app will fetch and display the models corresponding to the selected make and year.
+
+### Static Paths
+
+The generateStaticParams function is used to pre-render paths for all makes and years dynamically, allowing the application to statically generate pages for each combination of make and year.
+
+### Light and Dark Theme
+
+The application supports both light and dark themes. Tailwind CSS is configured to handle theme switching based on user preferences.
