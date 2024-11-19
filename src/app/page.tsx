@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Select } from "@/common";
+import { NavigateButton, Select } from "@/common";
 import { useMakes, useYears } from "@/hooks";
 
 export default function Home() {
@@ -10,6 +10,8 @@ export default function Home() {
 
   const [selectedMake, setSelectedMake] = useState<string>("");
   const [selectedYear, setSelectedYear] = useState<string>("");
+
+  const isNextDisabled = !selectedMake || !selectedYear;
 
   return (
     <main className="flex flex-col gap-8 items-center p-10">
@@ -32,6 +34,12 @@ export default function Home() {
           value={selectedYear}
           onChange={setSelectedYear}
           options={yearOptions}
+        />
+
+        <NavigateButton
+          href={`/result/${selectedMake}/${selectedYear}`}
+          label="Next"
+          disabled={isNextDisabled}
         />
       </div>
     </main>
