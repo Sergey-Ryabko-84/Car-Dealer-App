@@ -3,8 +3,8 @@ type ErrorMessageProps = {
 };
 
 export const ErrorMessage = ({ message }: ErrorMessageProps) => (
-  <main className="flex flex-col items-center p-10">
-    <h1 className="text-2xl font-semibold text-red-500">{message}</h1>
+  <div className="flex flex-col justify-center items-center">
+    <h2 className="text-2xl font-semibold text-red-500">{message}</h2>
     <p>Please try again later.</p>
-  </main>
+  </div>
 );

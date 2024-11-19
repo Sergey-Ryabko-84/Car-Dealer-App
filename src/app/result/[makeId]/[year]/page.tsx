@@ -1,18 +1,21 @@
-import React from "react";
+import { Suspense, use } from "react";
 import { getAllMakes } from "@/api/vehiclesApi";
 import { ModelsList } from "@/components";
+import { LoadingMessage } from "@/common/massages";
 
 type Props = {
   params: Promise<{ makeId: string; year: string }>;
 };
 
 export default function Result({ params }: Props) {
-  const { makeId, year } = React.use(params);
+  const { makeId, year } = use(params);
 
   return (
     <main className="flex flex-col items-center p-10">
       <h1 className="text-3xl font-semibold mb-4">Models:</h1>
-      <ModelsList makeId={makeId} year={year} />
+      <Suspense fallback={<LoadingMessage />}>
+        <ModelsList makeId={makeId} year={year} />
+      </Suspense>
     </main>
   );
 }
